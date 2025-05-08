@@ -1,10 +1,16 @@
 <script setup>
+const isClient = import.meta.client;
 const route = useRoute();
 const router = useRouter();
 
 // Track current page from query param
-const page = ref(parseInt(route.query.page || '1') || 1);
+const page = ref(1);
 const limit = 9;
+
+// Avoid SSR mismatch by deferring page reading until runtime
+if (isClient) {
+  page.value = parseInt(route.query.page || '1') || 1;
+}
 
 // 🧠 Reactive fetch with watch
 const { data, pending } = await useAsyncData(
