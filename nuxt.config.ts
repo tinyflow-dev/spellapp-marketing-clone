@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   modules: ['@nuxtjs/sitemap', '@nuxt/content', 'nuxt-gtag'],
 
@@ -108,7 +110,16 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    includeFiles: ['database/resources.db'], // 👈 this is the key fix
+    prerender: {
+      crawlLinks: true
+    },
+    // ✅ Correct: use this syntax for files that must be bundled with serverless functions
+    assets: [
+      {
+        baseName: 'resources.db',
+        dir: 'database'
+      }
+    ]
   },
 
   compatibilityDate: '2025-04-01'
