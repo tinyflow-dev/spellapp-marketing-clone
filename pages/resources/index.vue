@@ -72,7 +72,7 @@ const previousPage = () => {
     </header> -->
 
     <header class="u-header-spacing-top">
-        <h1 class="u-heading-h1 u-text-center">All posts <br> <strong class="u-text-primary">{{ pagination.total }}</strong></h1>
+        <h1 class="u-heading-h1 u-text-center">All posts <br> <strong v-if="pagination.total" class="u-text-primary">{{ pagination.total }}</strong></h1>
     </header>
 
     <!-- Section Related Posts -->

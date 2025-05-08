@@ -8,28 +8,46 @@ export default defineEventHandler((event) => {
   const offset = (page - 1) * limit;
 
   const dbPath = path.resolve(process.cwd(), 'public/resources.db');
-  const db = new Database(dbPath, { readonly: true });
 
-  // 1. Get paginated results
-  const resources = db.prepare(
-    `SELECT id, title, description, slug
-     FROM resources 
-     ORDER BY date DESC 
-     LIMIT ? OFFSET ?`
-  ).all(limit, offset);
+  try {
+    const db = new Database(dbPath, { readonly: true });
 
-  // 2. Get total count for pagination
-  const result = db.prepare(`SELECT COUNT(*) AS count FROM resources`).get() as { count: number };
-  const total = result.count;
-  const totalPages = Math.ceil(total / limit);
+    // 1. Get paginated results
+    const resources = db.prepare(
+      `SELECT id, title, description, slug
+       FROM resources 
+       ORDER BY date DESC 
+       LIMIT ? OFFSET ?`
+    ).all(limit, offset);
 
-  return {
-    resources,
-    pagination: {
-      page,
-      limit,
-      total,
-      totalPages,
-    }
-  };
+    // 2. Get total count for pagination
+    const result = db.prepare(`SELECT COUNT(*) AS count FROM resources`).get() as { count: number };
+    const total = result.count;
+    const totalPages = Math.ceil(total / limit);
+
+    console.log('[API] hit with page', page, 'offset', offset, '| Found resources:', resources.length, '| Total:', total);
+
+    return {
+      resources,
+      pagination: {
+        page,
+        limit,
+        total,
+        totalPages,
+      },
+      error: null
+    };
+  } catch (err) {
+    console.error('[API][resources] DB error:', err);
+    return {
+      resources: [],
+      pagination: {
+        page,
+        limit,
+        total: 0,
+        totalPages: 0,
+      },
+      error: err instanceof Error ? err.message : String(err)
+    };
+  }
 });
