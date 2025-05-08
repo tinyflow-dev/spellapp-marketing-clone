@@ -1,17 +1,41 @@
 <script setup>
-const { data: resources } = await useFetch('/api/resources')
-</script>
+const route = useRoute();
+const router = useRouter();
 
-<!-- <template>
-<div>
-    <h1>All Blogs</h1>
-    <div v-for="blog in blogs" :key="blog.id" class="mb-6">
-        <h2>{{ blog.title }}</h2>
-        <p>{{ blog.description }}</p>
-        <nuxt-link :to="`/resources/${blog.slug}`">Read more →</nuxt-link>
-    </div>
-</div>
-</template> -->
+// Track current page from query param
+const page = ref(parseInt(route.query.page || '1') || 1);
+const limit = 9;
+
+// 🧠 Reactive fetch with watch
+const { data, pending } = await useAsyncData(
+  'resources',
+  () =>
+    useFetch('/api/resources', {
+      query: { page: page.value, limit }
+    }).then(res => res.data.value),
+  {
+    watch: [page]
+  }
+);
+
+// Computed resources and pagination
+const resources = computed(() => data.value?.resources || []);
+const pagination = computed(() => data.value?.pagination || { page: 1, totalPages: 1, total: 0 });
+
+// Pagination handlers
+const nextPage = () => {
+  if (page.value < pagination.value.totalPages) {
+    page.value++;
+    router.replace({ query: { page: String(page.value) } });
+  }
+};
+const previousPage = () => {
+  if (page.value > 1) {
+    page.value--;
+    router.replace({ query: { page: String(page.value) } });
+  }
+};
+</script>
 
 
 <template>
@@ -41,8 +65,8 @@ const { data: resources } = await useFetch('/api/resources')
         <h1 class="u-heading-h1 u-text-center">All posts</h1>
     </header> -->
 
-    <header class="u-header-spacing-top u-spacing-block">
-        <h1 class="u-heading-h1 u-text-center">All posts</h1>
+    <header class="u-header-spacing-top">
+        <h1 class="u-heading-h1 u-text-center">All posts <br> <strong class="u-text-primary">{{ pagination.total }}</strong></h1>
     </header>
 
     <!-- Section Related Posts -->
@@ -62,7 +86,9 @@ const { data: resources } = await useFetch('/api/resources')
                 </li>
             </ul> -->
 
-            <UtilitiesPostsGrid>
+            <div v-if="pending">Loading...</div>
+
+            <UtilitiesPostsGrid v-else>
                 <CardsPost v-for="resource in resources" :key="resource.id" :to="`/resources/${resource.slug}`">
                     <template #title>{{ resource.title }}</template>
                     <template #description>{{ resource.description }}</template>
@@ -70,16 +96,17 @@ const { data: resources } = await useFetch('/api/resources')
             </UtilitiesPostsGrid>
 
             <!-- Pagination -->
-            <!-- <div v-if="totalPages > 1" class="pagination">
+            <div v-if="pagination.totalPages > 1" class="pagination">
                 <button type="button" class="pagination__btn" @click="previousPage"
-                    :disabled="currentPage === 1 || pending">
+                    :disabled="page <= 1 || pending">
                     <IconsChevronLeft class="pagination__btn__icon" /> Previous
                 </button>
+                <span>Page {{ page }} of {{ pagination.totalPages }}</span>
                 <button type="button" class="pagination__btn" @click="nextPage"
-                    :disabled="currentPage === totalPages || pending">Next
+                    :disabled="page >= pagination.totalPages || pending">Next
                     <IconsChevronRight class="pagination__btn__icon" />
                 </button>
-            </div> -->
+            </div>
         </div>
     </section>
 

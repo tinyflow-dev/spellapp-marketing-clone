@@ -401,6 +401,10 @@ p {
     display: none;
 }
 
+.u-text-primary {
+    color: $color-primary;
+}
+
 .u-text-neutral-2 {
     @extend %u-text-neutral-2;
 }
