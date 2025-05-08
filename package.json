@@ -1,0 +1,30 @@
+{
+    "name": "nuxt-app",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "format": "prettier --write ."
+    },
+    "dependencies": {
+        "@nuxt/content": "^3.2.2",
+        "@nuxtjs/sitemap": "^7.2.10",
+        "better-sqlite3": "^11.9.1",
+        "nuxt": "^3.15.4",
+        "nuxt-gtag": "^3.0.2",
+        "swiper": "^11.2.6",
+        "vue": "latest",
+        "vue-router": "latest"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.13",
+        "prettier": "3.5.3",
+        "sass-embedded": "^1.85.1",
+        "typescript": "^5.8.3",
+        "vue-tsc": "^2.2.8"
+    }
+}

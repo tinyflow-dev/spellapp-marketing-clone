@@ -1,0 +1,99 @@
+config:
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/design-creative-bg.png"
+    icon: "/images/icons/paintbrush-teal.svg"
+    title: "Work Documents"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/product-bg.png"
+    icon: "/images/icons/paintbrush-purple.svg"
+    title: "Research Papers"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/engineering-bg.png"
+    icon: "/images/icons/paintbrush-orange.svg"
+    title: "Project Proposals"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/marketing-bg.png"
+    icon: "/images/icons/paintbrush-pink.svg"
+    title: "Weekly Reports"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/sales-bg.png"
+    icon: "/images/icons/paintbrush-blue.svg"
+    title: "Project Planning"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/people-bg.png"
+    icon: "/images/icons/paintbrush-green.svg"
+    title: "Legal Documents"
+
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/design-creative-bg.png"
+    icon: "/images/icons/paintbrush-teal.svg"
+    title: "Meeting Agenda"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/product-bg.png"
+    icon: "/images/icons/paintbrush-purple.svg"
+    title: "Product Spec Docs"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/engineering-bg.png"
+    icon: "/images/icons/paintbrush-orange.svg"
+    title: "Strategy Documents"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/marketing-bg.png"
+    icon: "/images/icons/paintbrush-pink.svg"
+    title: "Onboarding Docs"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/sales-bg.png"
+    icon: "/images/icons/paintbrush-blue.svg"
+    title: "Job Descriptions"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/people-bg.png"
+    icon: "/images/icons/paintbrush-green.svg"
+    title: "Business Plans"
+
+  
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/design-creative-bg.png"
+    icon: "/images/icons/paintbrush-teal.svg"
+    title: "Marketing Briefs"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/product-bg.png"
+    icon: "/images/icons/paintbrush-purple.svg"
+    title: "Process Docs"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/engineering-bg.png"
+    icon: "/images/icons/paintbrush-orange.svg"
+    title: "Lab Reports"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/marketing-bg.png"
+    icon: "/images/icons/paintbrush-pink.svg"
+    title: "Stakeholder Updates"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/sales-bg.png"
+    icon: "/images/icons/paintbrush-blue.svg"
+    title: "Brainstorming Notes"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/people-bg.png"
+    icon: "/images/icons/paintbrush-green.svg"
+    title: "Action Plans"
+
+  - url: "https://spellapp.com/signup"
+    backgroundImage: "/images/templates/design-creative-bg.png"
+    icon: "/images/icons/paintbrush-teal.svg"
+    title: "SOPs"
+
+  

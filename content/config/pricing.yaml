@@ -1,0 +1,30 @@
+config:
+  - name: Free
+    monthly: $0
+    annually: $0
+    subtitle: Includes
+    link: /
+    features:
+      - Collaborative doc editor
+      - 10 documents
+      - 10k AI credits per month
+  - name: Pro
+    popular: true
+    monthly: $20
+    annually: $16
+    subtitle: Everything in Free, plus
+    link: /
+    features:
+      - Unlimited documents
+      - Up to 100k AI credits per month
+      - Templates & Guided doc creation
+  - name: Business  
+    monthly: $40
+    annually: $32
+    subtitle: Everything in Pro, plus
+    link: /subscription
+    features:
+      - Unlimited AI usage
+      - Single-sign on
+      - Organizations
+      

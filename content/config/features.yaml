@@ -1,0 +1,27 @@
+config:
+  - title: Create high quality docs in seconds
+    description: Save time by letting Spell write your docs for you. Go from blank page to polished doc 10x faster than Google Docs — and turn hours of writing into minutes.
+    button:
+      text: "Get started for free →"
+      url: "https://spellapp.com/signup"
+    gradient: "u-gradient-1"
+    image: "/images/features/homepage-feature-create.png"
+    id: create
+    
+  - title: Edit your docs using natural language
+    description: Just highlight text and tell Spell what to change. No switching between tools, no copy-pasting between Google Docs and ChatGPT — no formatting headaches.
+    button:
+      text: "Get started for free →"
+      url: "https://spellapp.com/signup"
+    gradient: "u-gradient-2"
+    image: "/images/features/homepage-feature-edit.png"
+    id: edit
+
+  - title: Collaborate with your team in real time
+    description: Share documents, edit together, and see updates live — real-time collaboration just like Google Docs, but built for an AI-first workflow.
+    button:
+      text: "Get started for free →"
+      url: "https://spellapp.com/signup"
+    gradient: "u-gradient-3"
+    image: "/images/features/homepage-feature-collaboration.png"
+    id: collaboration

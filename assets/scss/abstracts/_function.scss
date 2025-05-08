@@ -1,0 +1,29 @@
+@function toRem($pxValue) {
+    $remValue: calc($pxValue / 16) + rem;
+    @return $remValue;
+}
+@function toEm($pxValue) {
+    $remValue: calc($pxValue / 16) + em;
+    @return $remValue;
+}
+@function ratio($pxWidth, $pxHeight) {
+    $aspectRatio: calc($pxHeight / $pxWidth) * 100%;
+    @return $aspectRatio;
+}
+@function fluid-size($min-size, $max-size, $min-vw: 375px, $max-vw: 1439px) {
+    // Convert pixel values to rem (assuming 16px base font size)
+    $min-rem: calc($min-size / 16px) * 1rem;
+    $max-rem: calc($max-size / 16px) * 1rem;
+    $min-vw-rem: calc($min-vw / 16px) * 1rem;
+    $max-vw-rem: calc($max-vw / 16px) * 1rem;
+
+    // Calculate the slope and intercept for the linear equation
+    $slope: calc(($max-size - $min-size) / ($max-vw - $min-vw));
+    $intercept: calc($min-size - ($slope * $min-vw));
+
+    // Convert slope to rem
+    $slope-rem: calc($slope * 100vw);
+    $intercept-rem: calc($intercept / 16px) * 1rem;
+
+    @return clamp(#{$min-rem}, #{$slope-rem} + #{$intercept-rem}, #{$max-rem});
+}

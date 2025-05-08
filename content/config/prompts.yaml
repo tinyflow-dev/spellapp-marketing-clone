@@ -1,0 +1,287 @@
+config:
+  - prompts:
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Write a professional resignation letter →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Draft a marketing campaign brief →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Create a product launch press release →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Generate a monthly financial report →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Write a compelling cover letter →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Draft a detailed job description →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Create a business proposal template →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Write a quarterly board meeting memo →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Create a project management summary →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Draft a customer service reply email →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Write a performance review for staff →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Create a sales pitch for a new client →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Draft a company mission statement →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Write a formal partnership agreement →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Generate an investor update email →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Write an abstract for a research paper →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Draft a personal statement for school →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Create a literature review outline →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Write a thesis statement AP Bio Essay →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Generate a bibliography in APA format →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Draft a college scholarship essay →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Create a case study for business class →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Write a lab report on chemical reactions →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Summarize a novel for a book report →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Draft an argumentative essay intro →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Write a heartfelt thank you letter →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Draft a short story about friendship →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Create a wedding speech for my brother →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Write a bio for my personal website →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Draft a letter of recommendation →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Draft a marketing strategy doc to hit our revenue goal →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Revise this report to add data and citations →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Write a job description for a frontend engineer →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Create a product strategy doc →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Write a business plan for a mobile app startup →"
+
+
+  - prompts:
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Draft an onboarding checklist for new hires →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Write a quarterly marketing performance report →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Create an email campaign for product launch →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Write a detailed scope of work agreement →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Draft a social media calendar for the month →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Create an RFP template for vendor selection →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Draft an internal memo for policy changes →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Write a proposal for a cross-team initiative →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Create a sales enablement one-pager →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Write a financial projection for Q3 planning →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Create a first draft of our core company values →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Write a user guide for new product features →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Create a project kickoff summary document →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Draft a change management communication →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Write a competitive analysis of key rivals →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Create a timeline for a product development plan →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Write a summary of customer research insights →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Draft a performance improvement plan →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Create a FAQ document for internal tools →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Write a proposal for international expansion →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Draft a dissertation proposal on renewable energy storage →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Write a reflection paper for AP Lit →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Draft a critique of a scientific journal article →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Create a research proposal for thesis funding →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Write a summary of a historical event analysis →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Draft a grant application for a lab project →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Write a note to your landlord about repairs →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Create a holiday travel itinerary for family →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Write a speech for your best friend's wedding →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Draft a letter of intent for a home purchase →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/sparkles.svg"
+      text: "Create a personal mission and value statement →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-code.svg"
+      text: "Write a new employee welcome email →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/database.svg"
+      text: "Create a detailed event planning checklist →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/rocket.svg"
+      text: "Draft an agenda for my weekly team sync →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/file-text.svg"
+      text: "Create a SWOT analysis for a new market →"
+
+    - url: "https://spellapp.com/signup"
+      icon: "/images/icons/square-terminal.svg"
+      text: "Write a monthly update for project sponsors →"

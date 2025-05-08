@@ -1,0 +1,179 @@
+@use "./function" as *;
+@use "./variable" as *;
+
+%u-transition {
+    transition: all 0.2s ease;
+}
+
+%u-uppercase {
+    text-transform: uppercase;
+}
+
+%u-rounded-pill {
+    border-radius: 1000em;
+}
+
+%u-rounded-circle {
+    border-radius: 50%;
+}
+
+%u-cursor-pointer {
+    cursor: pointer;
+}
+
+%u-text-neutral-2 {
+    color: $color-neutral--2;
+}
+
+%u-fw-light {
+    font-weight: 300;
+}
+
+%u-fw-regular {
+    font-weight: 400;
+}
+
+%u-fw-medium {
+    font-weight: 500;
+}
+
+%u-fw-semibold {
+    font-weight: 600;
+}
+
+%u-fw-bold {
+    font-weight: 700;
+}
+
+%u-fw-extrabold {
+    font-weight: 800;
+}
+
+%u-fw-black {
+    font-weight: 900;
+}
+
+%u-stacking-context {
+    isolation: isolate;
+}
+
+%u-wh-full {
+    width: 100%;
+    height: 100%;
+}
+%u-w-full {
+    width: 100%;
+}
+
+%u-common-pseudo {
+    content: "";
+    position: absolute;
+}
+
+%u-position-relative {
+    position: relative;
+}
+
+%u-position-absolute {
+    position: absolute;
+}
+
+%u-select-none {
+    user-select: none;
+    pointer-events: none;
+}
+
+%u-ratio-1 {
+    aspect-ratio: 1;
+}
+
+%u-object-fit-cover {
+    object-fit: cover;
+}
+
+%u-overflow-hidden {
+    overflow: hidden;
+}
+
+%u-overflow-hidden-inline {
+    overflow-x: clip;
+    overflow-y: visible;
+}
+
+%u-overflow-hidden-block {
+    overflow-x: visible;
+    overflow-y: clip;
+}
+
+%u-text-md {
+    font-size: fluid-size(15px, 18px);
+    line-height: 1.78;
+}
+
+%u-text-regular {
+    @extend %u-fw-medium;
+    font-size: toRem(15);
+}
+
+%u-margin-inline-auto {
+    margin-inline: auto;
+}
+
+%u-display-flex {
+    display: flex;
+}
+
+%u-display-grid {
+    display: grid;
+}
+
+%u-align-item-center {
+    align-items: center;
+}
+
+%u-justify-content-center {
+    justify-content: center;
+}
+
+%u-flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+%u-flex-wrap {
+    flex-wrap: wrap;
+}
+
+%u-backdrop-stroke-blur {
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
+    border-width: 1px 1px var(--_bottom-size, 1px) 1px;
+    border-style: solid;
+    border-color: rgba($color: #ffffff, $alpha: 0.8);
+    backdrop-filter: blur(2px);
+}
+
+%u-fadeout-edge {
+    mask: linear-gradient(90deg, transparent, #000000 var(--_overlay, toRem(120)) calc(100% - var(--_overlay, toRem(120))), transparent);
+}
+
+%u-z-index-n1 {
+    z-index: -1;
+}
+
+%u-cover {
+    @extend %u-select-none;
+    @extend %u-object-fit-cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+%u-line-clamp {
+    @extend %u-overflow-hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--_line-clamp, 3);
+    -webkit-box-orient: vertical;
+}

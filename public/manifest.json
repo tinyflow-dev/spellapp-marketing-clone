@@ -1,0 +1,52 @@
+{
+    "name": "The AI-First Document Editor | Spell",
+    "short_name": "Spell",
+    "description": "The AI-powered alternative to Google Docs and Word, Spell is the best way to create & edit docs with AI.",
+    "id": "/?source=pwa",
+    "start_url": "/",
+    "scope": "/",
+    "theme_color": "#4f3af6",
+    "background_color": "#fefefe",
+    "display": "standalone",
+    "dir": "ltr",
+    "lang": "en-US",
+    "orientation": "any",
+    "icons": [
+        { "src": "/images/favicon/favicon-16x16.png", "sizes": "16x16", "type": "image/png", "purpose": "any" },
+        { "src": "/images/favicon/favicon-32x32.png", "sizes": "32x32", "type": "image/png", "purpose": "any" },
+        { "src": "/images/favicon/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+        { "src": "/images/favicon/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+        { "src": "/images/favicon/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    ],
+    "screenshots": [
+        {
+            "src": "/images/open-graph/og-default.png",
+            "sizes": "1920x1080",
+            "form_factor": "wide",
+            "label": "The AI-First Document Editor | Spell"
+        }
+    ],
+    "display_override": [
+        "fullscreen",
+        "minimal-ui",
+        "standalone",
+        "browser",
+        "window-controls-overlay"
+    ],
+    "categories": [
+        "productivity",
+        "business",
+        "utilities",
+        "education"
+    ],
+    "share_target": {
+        "action": "/",
+        "method": "GET",
+        "params": {
+            "title": "The AI-First Document Editor | Spell",
+            "text": "The AI-powered alternative to Google Docs and Word, Spell is the best way to create &amp; edit docs with AI.",
+            "url": "/"
+        }
+    },
+    "prefer_related_applications": false
+}

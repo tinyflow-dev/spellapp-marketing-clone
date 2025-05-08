@@ -1,0 +1,9 @@
+config:
+  - name: "Product"
+    url: "/#product"
+  - name: "Pricing"
+    url: "/pricing"
+  - name: "Why"
+    url: "/why"
+  - name: "Blog"
+    url: "/resources"
