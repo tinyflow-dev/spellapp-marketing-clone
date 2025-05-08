@@ -3,7 +3,7 @@ import Database from 'better-sqlite3';
 import path from 'path';
 
 export default defineEventHandler(() => {
-  const dbPath = path.resolve(process.cwd(), 'database/resources.db');
+  const dbPath = path.resolve(process.cwd(), 'public/resources.db');
   const db = new Database(dbPath, { readonly: true });
 
   const stmt = db.prepare('SELECT * FROM resources ORDER BY date DESC');
