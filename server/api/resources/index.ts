@@ -6,8 +6,7 @@ export default defineEventHandler((event) => {
   const page = parseInt(query.page as string) || 1;
   const limit = parseInt(query.limit as string) || 9;
   const offset = (page - 1) * limit;
-
-  const dbPath = path.resolve(process.cwd(), 'public/resources.db');
+  let dbPath = path.resolve(path.dirname(new URL(import.meta.url).pathname), 'resources.db');
 
   try {
     const db = new Database(dbPath, { readonly: true });
