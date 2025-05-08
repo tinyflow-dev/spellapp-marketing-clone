@@ -1,23 +1,20 @@
 <script setup>
-const isClient = import.meta.client;
 const route = useRoute();
 const router = useRouter();
+const requestUrl = useRequestURL(); // works on both SSR & client
 
 // Track current page from query param
-const page = ref(1);
+const page = computed(() =>
+  parseInt((route.query.page || requestUrl.searchParams.get('page') || '1')) || 1
+);
 const limit = 9;
-
-// Avoid SSR mismatch by deferring page reading until runtime
-if (isClient) {
-  page.value = parseInt(route.query.page || '1') || 1;
-}
 
 // 🧠 Reactive fetch with watch
 const { data, pending } = await useAsyncData(
   'resources',
   () =>
     useFetch('/api/resources', {
-      query: { page: page.value, limit }
+      query: () => ({ page: page.value, limit })
     }).then(res => res.data.value),
   {
     watch: [page]
@@ -26,19 +23,22 @@ const { data, pending } = await useAsyncData(
 
 // Computed resources and pagination
 const resources = computed(() => data.value?.resources || []);
-const pagination = computed(() => data.value?.pagination || { page: 1, totalPages: 1, total: 0 });
+const pagination = computed(() => ({
+  page: data.value?.pagination?.page || 1,
+  totalPages: data.value?.pagination?.totalPages || 1,
+  total: data.value?.pagination?.total || 0,
+}));
 
 // Pagination handlers
 const nextPage = () => {
   if (page.value < pagination.value.totalPages) {
-    page.value++;
-    router.replace({ query: { page: String(page.value) } });
+    router.replace({ query: { page: String(page.value + 1) } });
   }
 };
+
 const previousPage = () => {
   if (page.value > 1) {
-    page.value--;
-    router.replace({ query: { page: String(page.value) } });
+    router.replace({ query: { page: String(page.value - 1) } });
   }
 };
 </script>
@@ -100,6 +100,11 @@ const previousPage = () => {
                     <template #description>{{ resource.description }}</template>
                 </CardsPost>
             </UtilitiesPostsGrid>
+
+            <!-- No resources found -->
+            <template v-if="resources.length === 0 && !pending">
+                <p class="u-text-center">No resources found on this page.</p>
+            </template>
 
             <!-- Pagination -->
             <div v-if="pagination.totalPages > 1" class="pagination">
