@@ -107,5 +107,9 @@ export default defineNuxtConfig({
     }
   },
 
+  nitro: {
+    includeFiles: ['database/resources.db'], // 👈 this is the key fix
+  },
+
   compatibilityDate: '2025-04-01'
 })

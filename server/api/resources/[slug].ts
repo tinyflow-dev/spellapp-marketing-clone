@@ -5,7 +5,7 @@ export default defineEventHandler((event) => {
   const { slug } = event.context.params as { slug: string };
 
   const dbPath = path.resolve(process.cwd(), 'database/resources.db');
-  const db = new Database(dbPath);
+  const db = new Database(dbPath, { readonly: true });
 
   const blog = db
     .prepare(`SELECT * FROM resources WHERE slug = ? LIMIT 1`)
