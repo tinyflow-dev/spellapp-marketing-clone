@@ -1,7 +1,5 @@
 import Database from 'better-sqlite3';
-import { writeFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { getTempDbPath } from '~/utils/database';
 
 export default defineEventHandler(async (event) => {
   const { slug } = event.context.params as { slug: string };
@@ -12,17 +10,8 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const dbBuffer = await useStorage('assets:server').getItemRaw('resources.db');
-  if (!dbBuffer) {
-    throw createError({ statusCode: 500, message: 'Database not found in storage' });
-  }
-
-  // ✅ Write buffer to a temp file
-  const tempDbPath = join(tmpdir(), `resources-${Date.now()}.db`);
-  writeFileSync(tempDbPath, dbBuffer);
-
-  // ✅ Read from temp file
-  const db = new Database(tempDbPath, { readonly: true });
+  const dbPath = await getTempDbPath();
+  const db = new Database(dbPath, { readonly: true, fileMustExist: true });
 
   try {
     const resource = db
@@ -35,6 +24,8 @@ export default defineEventHandler(async (event) => {
         statusMessage: `Blog with slug "${slug}" not found`,
       });
     }
+
+    setHeader(event, 'Cache-Control', 'public, max-age=31536000, immutable');
 
     return resource;
   } catch (err) {
