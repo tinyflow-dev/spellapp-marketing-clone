@@ -14,7 +14,9 @@ export default defineNuxtConfig({
   routeRules: {
     // Homepage pre-rendered at build time
     '/': { prerender: true },
-    '/resources': { ssr: true, prerender: false }, // 👈 add this
+    '/resources': { ssr: true, prerender: false },
+     // Resource Details page generated on demand, revalidates in background, cached on CDN for 1 hour (3600 seconds)
+    '/resources/**': { isr: 3600 },
   },
 
   site: {
