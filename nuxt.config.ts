@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   routeRules: {
     // Homepage pre-rendered at build time
     '/': { prerender: true },
-    '/resources': { ssr: true },
+    '/resources': { ssr: true, prerender: false }, // 👈 add this
     '/resources/**': { ssr: true },
   },
 

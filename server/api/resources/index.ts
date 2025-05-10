@@ -1,4 +1,8 @@
 import Database from 'better-sqlite3';
+import { writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
 export const prerender = false;
 
 export default defineEventHandler(async (event) => {
@@ -6,11 +10,19 @@ export default defineEventHandler(async (event) => {
   const page = parseInt(query.page as string) || 1;
   const limit = parseInt(query.limit as string) || 9;
   const offset = (page - 1) * limit;
+
+  // 1. Load DB buffer from Nitro storage
   const dbBuffer = await useStorage('assets:server').getItemRaw('resources.db');
   if (!dbBuffer) {
     throw createError({ statusCode: 500, message: 'Database not found in storage' });
   }
-  const db = new Database(dbBuffer, { readonly: true });
+
+  // 2. Write buffer to a temp file
+  const tempDbPath = join(tmpdir(), `resources-${Date.now()}.db`);
+  writeFileSync(tempDbPath, dbBuffer);
+
+  // 3. Load DB from temp file path
+  const db = new Database(tempDbPath, { readonly: true });
 
   try {
     // 1. Get paginated results
@@ -26,7 +38,8 @@ export default defineEventHandler(async (event) => {
     const total = result.count;
     const totalPages = Math.ceil(total / limit);
 
-    console.log('[API] hit with page', page, 'offset', offset, '| Found resources:', resources.length, '| Total:', total);
+    console.log('[API New] hit with page', page, 'offset', offset, '| Found resources:', resources.length, '| Total:', total);
+    console.log(`[API] received page = ${query.page}`);
 
     return {
       resources,
@@ -50,5 +63,7 @@ export default defineEventHandler(async (event) => {
       },
       error: err instanceof Error ? err.message : String(err)
     };
+  } finally {
+    db.close(); // cleanup
   }
 });

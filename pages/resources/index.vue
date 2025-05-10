@@ -2,23 +2,27 @@
 const route = useRoute();
 const router = useRouter();
 
-// Track current page from query param
-const page = computed(() => parseInt(route.query.page) || 1);
 const limit = 9;
 
-// 🧠 Reactive fetch with watch
+// ✅ Track current page from reactive route.query
+const page = computed(() => {
+  const param = route.query.page;
+  const parsed = Array.isArray(param) ? parseInt(param[0]) : parseInt(param || '1');
+  return isNaN(parsed) || parsed < 1 ? 1 : parsed;
+});
+
+// ✅ Reactive fetch with dynamic key + watch
 const { data, pending } = await useAsyncData(
   () => `resources-page-${page.value}`,
   () =>
-    useFetch('/api/resources', {
-      query: () => ({ page: page.value, limit })
-    }).then(res => res.data.value),
+    $fetch(`/api/resources?page=${page.value}&limit=${limit}`),
   {
-    watch: [page]
+    watch: [page],
+    server: true,
   }
 );
 
-// Computed resources and pagination
+// 🧠 Computed resources and pagination info
 const resources = computed(() => data.value?.resources || []);
 const pagination = computed(() => ({
   page: data.value?.pagination?.page || 1,
@@ -26,16 +30,16 @@ const pagination = computed(() => ({
   total: data.value?.pagination?.total || 0,
 }));
 
-// Pagination handlers
+// ✅ Pagination handlers
 const nextPage = () => {
   if (page.value < pagination.value.totalPages) {
-    router.replace({ query: { page: String(page.value + 1) } });
+    router.replace({ query: { ...route.query, page: String(page.value + 1) } });
   }
 };
 
 const previousPage = () => {
   if (page.value > 1) {
-    router.replace({ query: { page: String(page.value - 1) } });
+    router.replace({ query: { ...route.query, page: String(page.value - 1) } });
   }
 };
 </script>
