@@ -1,5 +1,4 @@
 import { defineContentConfig, defineCollection, z } from "@nuxt/content";
-import { asSitemapCollection } from "@nuxtjs/sitemap/content";
 
 export default defineContentConfig({
     collections: {
@@ -15,11 +14,5 @@ export default defineContentConfig({
                 config: z.any(),
             }),
         }),
-        content: defineCollection(
-            asSitemapCollection({
-                type: "page",
-                source: "resources/**/*.md",
-            }),
-        ),
     },
 });
