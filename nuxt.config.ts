@@ -14,11 +14,11 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // Homepage pre-rendered at build time
-    '/': { prerender: true },
-    '/resources': { ssr: true, prerender: false },
-     // Resource Details page generated on demand, revalidates in background, cached on CDN for 1 hour (3600 seconds)
-    '/resources/**': { isr: 3600 },
+    // Homepage is fully static at build
+    '/': { static: true },
+    // Resources & Resource Details page generated on demand, revalidates in background, cached on CDN for 1 year (31536000 seconds)
+    '/resources': { isr: 31536000, prerender: false },
+    '/resources/**': { isr: 31536000 },
   },
 
   site: {
