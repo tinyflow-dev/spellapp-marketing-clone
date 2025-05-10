@@ -1,4 +1,6 @@
-import { defineNuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from 'nuxt/config';
+
+const baseUrl = process.env.BASE_URL;
 
 export default defineNuxtConfig({
   modules: ['@nuxtjs/sitemap', '@nuxt/content', 'nuxt-gtag'],
@@ -20,13 +22,13 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: "https://spellapp.com",
+    url: baseUrl,
     name: "Spell",
   },
 
   runtimeConfig: {
     public: {
-      canonicalDomain: "https://spellapp.com",
+      baseDomain: baseUrl,
     },
   },
 
@@ -85,22 +87,23 @@ export default defineNuxtConfig({
         { property: 'og:description', content: 'The AI-powered alternative to Google Docs and Word, Spell is the best way to create & edit docs with AI.' },
         { property: 'twitter:description', content: 'The AI-powered alternative to Google Docs and Word, Spell is the best way to create & edit docs with AI.' },
 
-        { property: 'og:image', content: '/images/open-graph/og-default.png' },
-        { property: 'twitter:image', content: '/images/open-graph/og-default.png' },
+        { property: 'og:image', content: `${baseUrl}/images/open-graph/og-default.png` },
+        { property: 'twitter:image', content: `${baseUrl}/images/open-graph/og-default.png` },
 
         { name: 'author', content: 'Spell' },
         { name: 'keywords', content: 'Spellapp, Spell AI, Spell, AI-First Document Editor, Document Editor, AI Editor, AI-First Editor Editor, Create docs with AI, Real-time collaboration, AI, Google Docs, Word' },
+        { property: 'og:site_name', content: 'Spell' },
         { property: 'og:type', content: 'website' },
         { property: 'twitter:card', content: 'summary_large_image' },
       ],
       link: [
-        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/images/favicon/android-chrome-512x512.png' },
-        { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/images/favicon/android-chrome-192x192.png' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicon/apple-touch-icon.png' },
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon/favicon-32x32.png' },
-        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicon/favicon-16x16.png' },
-        { rel: 'shortcut icon', type: 'image/x-icon', href: '/images/favicon/favicon.ico' },
-        { rel: "manifest", href: '/manifest.json' },
+        { rel: 'icon', type: 'image/png', sizes: '512x512', href: `${baseUrl}/images/favicon/android-chrome-512x512.png` },
+        { rel: 'icon', type: 'image/png', sizes: '192x192', href: `${baseUrl}/images/favicon/android-chrome-192x192.png` },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseUrl}/images/favicon/apple-touch-icon.png` },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: `${baseUrl}/images/favicon/favicon-32x32.png` },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: `${baseUrl}/images/favicon/favicon-16x16.png` },
+        { rel: 'shortcut icon', type: 'image/x-icon', href: `${baseUrl}/images/favicon/favicon.ico` },
+        { rel: "manifest", href: `${baseUrl}/manifest.json` },
 
         { rel: "preconnect", crossorigin: "anonymous", href: 'https://fonts.googleapis.com' },
         { rel: "preconnect", crossorigin: "anonymous", href: 'https://fonts.gstatic.com' },

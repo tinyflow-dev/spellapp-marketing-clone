@@ -1,5 +1,6 @@
 <script setup>
 const isClient = import.meta.client;
+const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
 const { formatDate } = useFormattedDate();
 const { data: resource, pending, error } = await useFetch(`/api/resources/${route.params.slug}`);
@@ -15,7 +16,7 @@ if (error.value) {
 usePageMeta({
     title: resource.value?.title,
     description: resource.value?.description,
-    image: resource.value?.thumbnail,
+    image: runtimeConfig.public.baseDomain + resource.value?.thumbnail,
 });
 
 /* Dynamic CTAs Add Functions */

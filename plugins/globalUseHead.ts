@@ -3,7 +3,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     const runtimeConfig = useRuntimeConfig();
 
     // Default domain from runtime config or fallback
-    const domain = runtimeConfig.public.canonicalDomain || "https://spellapp.com";
+    const domain = runtimeConfig.public.baseDomain || "https://spellapp.com";
 
     // Watch route changes and update globalUseHead
     const updateGlobalUseHead = () => {
