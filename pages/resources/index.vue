@@ -1,7 +1,6 @@
 <script setup>
 const route = useRoute();
 const router = useRouter();
-const requestUrl = useRequestURL(); // works on both SSR & client
 
 // Track current page from query param
 const page = computed(() => parseInt(route.query.page) || 1);

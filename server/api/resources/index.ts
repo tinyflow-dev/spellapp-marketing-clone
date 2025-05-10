@@ -1,4 +1,5 @@
 import Database from 'better-sqlite3';
+export const prerender = false;
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);
