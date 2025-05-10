@@ -1,16 +1,17 @@
 import Database from 'better-sqlite3';
-import path from 'path';
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
   const query = getQuery(event);
   const page = parseInt(query.page as string) || 1;
   const limit = parseInt(query.limit as string) || 9;
   const offset = (page - 1) * limit;
-  const dbPath = path.resolve(process.cwd(), 'public/resources.db');
+  const dbBuffer = await useStorage('assets:server').getItemRaw('resources.db');
+  if (!dbBuffer) {
+    throw createError({ statusCode: 500, message: 'Database not found in storage' });
+  }
+  const db = new Database(dbBuffer, { readonly: true });
 
   try {
-    const db = new Database(dbPath, { readonly: true });
-
     // 1. Get paginated results
     const resources = db.prepare(
       `SELECT id, title, description, slug
