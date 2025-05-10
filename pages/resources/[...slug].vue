@@ -74,9 +74,6 @@ const formattedDate = formatDate(resource.value?.date);
 </script>
 
 <template>
-  <!-- <h1>{{ resource.title }}</h1>
-  <p>{{ resource.date }}</p>
-  <Richtext :content="resource.body" isHTML /> -->
 <div v-if="pending">Loading...</div>
 <template v-else>
   <!-- Section Blog Details Header -->

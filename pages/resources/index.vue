@@ -4,14 +4,12 @@ const router = useRouter();
 const requestUrl = useRequestURL(); // works on both SSR & client
 
 // Track current page from query param
-const page = computed(() =>
-  parseInt((route.query.page || requestUrl.searchParams.get('page') || '1')) || 1
-);
+const page = computed(() => parseInt(route.query.page) || 1);
 const limit = 9;
 
 // 🧠 Reactive fetch with watch
 const { data, pending } = await useAsyncData(
-  'resources',
+  () => `resources-page-${page.value}`,
   () =>
     useFetch('/api/resources', {
       query: () => ({ page: page.value, limit })
